@@ -1,5 +1,5 @@
 {
-  "name": "ojira-test-ci",
+  "name": "test-ci-cd",
   "version": "0.1.0",
   "private": true,
   "scripts": {
