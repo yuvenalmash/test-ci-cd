@@ -1,43 +1,16 @@
-// .eslintrc.json
-
 {
   "env": {
     "browser": true,
+    "commonjs": true,
     "es2021": true
   },
-
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@next/eslint-plugin-next/recommended"
+    "airbnb-base",
+    "next/core-web-vitals"
   ],
-
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "@next/eslint-plugin-next"
-  ],
-
   "parserOptions": {
-    "ecmaVersion": 2021,
-    "ecmaFeatures": {
-      "tsx": true
-    },
-    "sourceType": "module"
+    "ecmaVersion": 12
   },
-
   "rules": {
-    "react/react-in-jsx-scope": "off"
-  },
-
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-
-  "ignorePatterns": [
-    "jest.config.js"
-  ]
+  }
 }
