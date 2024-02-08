@@ -1,0 +1,13 @@
+{ 
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "at-rule-no-unknown": [
+      null,
+      {"ignoreAtRules": ["tailwind"]}
+    ],
+    "block-no-empty": true,
+    "no-empty-source": true,
+    "color-no-invalid-hex": true,
+    "no-irregular-whitespace": true
+  }
+}
