@@ -20,7 +20,6 @@ jobs:
       - name: Setup ESLint
         run: |
           npm install --save-dev eslint @next/eslint-plugin-next eslint-plugin-react eslint-plugin-react-hooks eslint-config-airbnb eslint-plugin-import
-          [-f .eslintrc.json]
       - name: ESLint Report
         run: |
           npx eslint .
@@ -35,6 +34,5 @@ jobs:
       - name: Setup Stylelint
         run: |
           npm install --save-dev stylelint stylelint-scss stylelint-config-standard
-          [ -f .stylelintrc.json]
       - name: Stylelint Report
         run: npx stylelint "**/*.{css,scss}"
