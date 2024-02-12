@@ -27,11 +27,11 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.GCR_TOKEN }}
     
     -
       name: Build and Push
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: user/test-ci-cd:latest
+        tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
