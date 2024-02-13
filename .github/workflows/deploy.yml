@@ -49,5 +49,5 @@ jobs:
           sshpass -p '${{ secrets.ARTIFACT_PASSWORD }}' ssh -v -o StrictHostKeyChecking=no ${{ secrets.ARTIFACT_USER }}@${{ secrets.ARTIFACT_HOST }} <<'ENDSSH'
           docker pull ghcr.io/${{ github.repository }}:latest
           cd ${{ secrets.APP_PATH }}
-          docker-compose down
-          docker-compose up -d
+          docker compose down
+          docker compose up -d
