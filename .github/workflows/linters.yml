@@ -1,9 +1,9 @@
 name: Linters
 
-on: 
-  pull_request:
+on:
   push:
-    branches: [main]
+    branches: [develop, main]
+  pull_request:
 
 env:
   FORCE_COLOR: 1
@@ -19,7 +19,20 @@ jobs:
           node-version: "18.x"
       - name: Setup ESLint
         run: |
-          npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin @next/eslint-plugin-next eslint-plugin-react
-      - name: Run ESLint
+          npm install --save-dev eslint @next/eslint-plugin-next eslint-plugin-react eslint-plugin-react-hooks eslint-config-airbnb eslint-plugin-import
+      - name: ESLint Report
         run: |
-          npm run lint
+          npx eslint .
+  stylelint:
+    name: Stylelint
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18.x"
+      - name: Setup Stylelint
+        run: |
+          npm install --save-dev stylelint stylelint-scss stylelint-config-standard
+      - name: Stylelint Report
+        run: npx stylelint "**/*.{css,scss}"
